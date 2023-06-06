@@ -1,0 +1,711 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>霉霉Taylor -- 中文</title>
+		<link rel="stylesheet" type="text/css" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+		<script src="https://sdk.jinrishici.com/v2/browser/jinrishici1.js" charset="utf-8"></script>
+		<link rel="shortcut icon" href="https://www.taylorswift.com/files/2022/08/favicon__1_-300x300.png" type="image/png" />
+		
+		<style type="text/css">
+			*{
+				list-style: none;
+			}
+			html{
+				background-color: #eee;
+			}
+			#navBar{
+				/* height: 50px; */
+				position: relative;
+				top: -16px;
+				height: 100vh;
+				width: 100%;
+				background-color: #6ebeec;
+				background-image: url(https://s1.ax1x.com/2022/10/28/x4G33q.jpg);
+				background-size: cover;
+				background-attachment: fixed;
+			}
+			#navBar .logo{
+				width: 40px;
+				margin-left: 1em;
+				margin-top: 10px;
+				border-radius: 100%;
+				float: left;
+				transition: all 1.0s;
+			}
+			#navBar .logo:hover{
+				transform: rotate(360deg);
+			}
+			 #navBar a{
+				color: #fff;
+				text-decoration: none;
+			}
+			#navBar ul{
+				color: #fff;
+				line-height: 50px;
+			}
+			#navBar ul li{
+				margin-left: 15px;
+				float: left;
+			}
+			#navBar .jinrishici-sentence{
+				font-weight: 100;
+				font-size: 18px;
+				margin-top: 10px;
+				line-height: 30px;
+				padding: 2px 10px;
+				border: 1px solid #fff;
+				border-radius: 30px;
+			}
+			#navBar .menu{
+				position: absolute;
+				right: 40px;
+			}
+			#navBar .menu i{
+				padding-right: 3px;
+				font-size: 16px;
+			}
+			#navBar .show{
+				padding-top: 40vh;
+				width: 100%;
+			}
+			#navBar .info{
+				text-align: center;
+				color: #fffeff;
+				font-weight: 300;
+				font-size: 6em;
+			}
+			
+			@media(max-width: 991px){
+				/* 手机尺寸时 */
+				#navBar .jinrishici-sentence{
+					display: none;
+				}
+				#navBar .info{
+				font-size: 2.2em;
+			}
+		}
+		
+			#btn{
+				width: 100%;
+				text-align: center;
+			}
+			#btn ul{
+				display:inline-block;
+			}
+			#btn ul li{
+				margin-right: 2px;
+				font-size: 22px;
+				padding: 6px 13px;
+				background-color: #eee;
+				border-radius: 100%;
+				line-height: 35px;
+			}
+
+			.heading{
+				font-family: 'Lato', sans-serif;
+				font-weight: 200;
+				position:relative;
+				padding-bottom:12px;
+				margin-bottom: 1em;
+			}
+			.heading:before {
+				content:"";
+				width:100%;
+				padding:0 25px;
+				border-bottom:1px solid #eee;
+				position:absolute;
+				bottom:-1px;
+				left:-25px;
+				box-sizing:unset;
+			}
+			.heading:after {
+				transition:all .35s ease-out;
+				content:"";
+				position:absolute;
+				background:#2196f3;
+				width:1em;
+				height:5px;
+				bottom:-3px;
+				left:0;
+				border-radius:10px;
+				box-shadow:0 2px 12px rgba(19, 91, 145, 0.8);
+			}
+			.heading:hover:after {
+				width:2em;
+			}
+			
+			.recent-post-item {
+			display: -webkit-box;
+			display: -moz-box;
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: box;
+			display: flex;
+			height: 20em;
+			width: 100%;
+			border-radius: 12px 8px 8px 12px;
+			background: var(--card-bg);
+			-webkit-box-shadow: 0 4px 8px 6px rgba(7,17,27,.06);
+			box-shadow: 0 4px 8px 6px rgba(7,17,27,.06);
+			-webkit-transition: all .3s;
+			-moz-transition: all .3s;
+			-o-transition: all .3s;
+			transition: all .3s;
+			-webkit-box-orient: horizontal;
+			-moz-box-orient: horizontal;
+			-o-box-orient: horizontal;
+			-webkit-flex-direction: row;
+			-ms-flex-direction: row;
+			flex-direction: row;
+			-webkit-box-align: center;
+			-moz-box-align: center;
+			-o-box-align: center;
+			-ms-flex-align: center;
+			-webkit-align-items: center;
+			align-items: center;
+			-ms-transition: all .3s;
+}
+
+
+@media screen and (max-width:768px) {
+	.recent-post-item {
+		border-radius: 12px 12px 8px 8px;
+	}
+}
+
+
+.recent-post-item:hover {
+	-webkit-box-shadow: 0 4px 12px 12px rgba(7,17,27,.15);
+	box-shadow: 0 4px 12px 12px rgba(7,17,27,.15);
+}
+
+
+.recent-post-item:hover img.post_bg {
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	transform: scale(1.1);
+	-ms-transform: scale(1.1);
+}
+
+
+.recent-post-item .right_radius {
+	border-radius: 0 8px 8px 0;
+	-webkit-box-ordinal-group: 2;
+	-moz-box-ordinal-group: 2;
+	-o-box-ordinal-group: 2;
+	-ms-flex-order: 2;
+	-webkit-order: 2;
+	order: 2;
+}
+
+
+.recent-post-item .left_radius {
+	border-radius: 8px 0 0 8px;
+}
+
+
+.recent-post-item .right_radius {
+	border-radius: 0 8px 8px 0;
+	-webkit-box-ordinal-group: 2;
+	-moz-box-ordinal-group: 2;
+	-o-box-ordinal-group: 2;
+	-ms-flex-order: 2;
+	-webkit-order: 2;
+	order: 2;
+}
+
+
+
+.recent-post-item .post_cover {
+	overflow: hidden;
+	width: 45%;
+	height: 100%;
+	-webkit-mask-image: -webkit-radial-gradient(#fff,#000);
+}
+
+.recent-post-item .post_cover img.post_bg {
+	width: 100%;
+	height: 100%;
+	-webkit-transition: all .6s;
+	-moz-transition: all .6s;
+	-o-transition: all .6s;
+	transition: all .6s;
+	-ms-transition: all .6s;
+	object-fit: cover;
+}
+
+.recent-post-item .post_cover img.post_bg:hover {
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	transform: scale(1.1);
+	-ms-transform: scale(1.1);
+}
+
+.recent-post-item>.recent-post-info {
+	display: inline-block;
+	overflow: hidden;
+	padding: 0 40px;
+	width: 55%;
+}
+
+.recent-post-item>.recent-post-info.no-cover {
+	width: 100%;
+}
+
+
+.recent-post-item>.recent-post-info>.article-title {
+	margin-bottom: .3rem;
+	color: var(--text-highlight-color);
+	font-size: 1.72em;
+	line-height: 1.4;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+	-webkit-line-clamp: 2;
+}
+
+.recent-post-item>.recent-post-info>.article-title:hover {
+	color: #5246e2;
+}
+
+
+
+.recent-post-item>.recent-post-info>.article-meta-wrap {
+	color: #858585;
+	font-size: 90%;
+}
+
+.recent-post-item>.recent-post-info>.article-meta-wrap>.post-meta-date {
+	cursor: default;
+}
+
+.recent-post-item>.recent-post-info>.article-meta-wrap .sticky {
+	color: #ff7242;
+}
+
+.recent-post-item>.recent-post-info>.article-meta-wrap i {
+	margin: 0 .2rem 0 0;
+}
+
+.recent-post-item>.recent-post-info>.article-meta-wrap .article-meta-label {
+	padding-right: .2rem;
+}
+
+.recent-post-item>.recent-post-info>.article-meta-wrap .article-meta__separator {
+	margin: 0 .3rem;
+}
+
+.recent-post-item>.recent-post-info>.article-meta-wrap .article-meta__link {
+	margin: 0 .2rem;
+}
+
+.recent-post-item>.recent-post-info>.article-meta-wrap .fa-angle-right {
+	margin: 0 .2rem;
+}
+
+.recent-post-item>.recent-post-info>.article-meta-wrap a {
+	color: #858585;
+}
+
+.recent-post-item>.recent-post-info>.article-meta-wrap a:hover {
+	color: #5246e2;
+	text-decoration: underline;
+}
+
+.recent-post-item>.recent-post-info>.content {
+	margin-top: .3rem;
+	-webkit-line-clamp: 3;
+}
+
+@media screen and (max-width:768px) {
+	.recent-post-item {
+		height: auto!important;
+		-webkit-box-orient: vertical;
+		-moz-box-orient: vertical;
+		-o-box-orient: vertical;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+
+	.recent-post-item .post_cover {
+		width: 100%;
+		height: 230px;
+		border-radius: 8px 8px 0 0;
+		-webkit-box-ordinal-group: 1!important;
+		-moz-box-ordinal-group: 1!important;
+		-o-box-ordinal-group: 1!important;
+		-ms-flex-order: 1!important;
+		-webkit-order: 1!important;
+		order: 1!important;
+	}
+
+	.recent-post-item .recent-post-info {
+		padding: 1rem 1rem 1.5rem;
+		width: 100%;
+		-webkit-box-ordinal-group: 2!important;
+		-moz-box-ordinal-group: 2!important;
+		-o-box-ordinal-group: 2!important;
+		-ms-flex-order: 2!important;
+		-webkit-order: 2!important;
+		order: 2!important;
+	}
+
+	.recent-post-item .recent-post-info.no-cover {
+		padding: 1.5rem 1rem;
+	}
+
+	.recent-post-item .recent-post-info .article-title {
+		font-size: 1.43em;
+	}
+
+	.recent-post-item .recent-post-info .content {
+		height: auto;
+	}
+}
+		
+	
+		</style>
+		
+	</head>
+	
+	<body>
+
+		<div id="navBar">
+				<img class="logo" src="https://z3.ax1x.com/2021/08/11/fNbm5T.png">
+			<ul>
+				<li class="jinrishici-sentence">XWPYE</li>
+				<div class="menu">
+				<a href="https://www.taylorswift.com/"><li><i class="fa fa-home"></i>首页</a></li>
+				<a href="https://xwpye.rth1.me/login"><li><i class="fa fa-qq1"></i>注册</a></li>
+				<a href="https://xwpye.rth1.me/danmu"><li><i class="fa fa-qq1"></i>找我</a></li>
+				<li><i class="fa fa-info-circle"></i><a onclick="alert('Data (Excluding Templates) Copyright © ℗ 2022 XWPYE.  All rights reserved.    v1.1.50 beta')">关于</a></li>
+				</div>
+			</ul>
+			
+			<div class="show">
+			<div class="info">⁣⁣⁣⁣Taylor Swift重录</div>
+			<div id="btn">
+				<ul>
+					<a href="https://www.facebook.com/19614945368"><li><i class="fa fa-facebook" style="color: #0d3e63;"></i></li></a>
+					<a href="https://weibo.com/taylorswiftvip"><li><i class="fa fa-weibo" style="color: #FF2400;"></i></li></a>
+					<a href="https://www.instagram.com/taylorswift/"><li><i class="fa fa-instagram" style="color: #FF3399;"></i></li></a>
+					<a href="https://www.youtube.com/%20taylor%20swift"><li><i class="fa fa-youtube" style="color: #FF0000;"></i></li></a>
+					<a href="https://twitter.com/taylorswift13"><li><i class="fa fa-twitter" style="color: #3333FF;"></i></li></a>
+					<a href="https://snapchat.com/add/taylorswift"><li><i class="fa fa-snapchat" style="color: #CCCC33;"></i></li></a>
+					<a href="http://taylorswift.tumblr.com/"><li><i class="fa fa-tumblr" style="color: #FFCC99;"></i></li></a>
+					<a href="https://store.taylorswift.com/"><li><i class="fa fa-money" style="color: #33CC33;"></i></li></a>
+				</ul>
+			</div>
+			</div>
+		</div>
+		
+ <div class="container" style="margin-top: 15px;">
+                <div class="row">
+                    <div class="col-md-12">
+						<h1 class="heading">重录计划</h1>
+		
+						<div class="recent-post-item">
+    <div class="post_cover left_radius">
+        <a href="https://taylor.lnk.to/fearlesstaylorsversionWE" title="">
+            <img class="post_bg entered loaded" src="https://y.qq.com/music/photo_new/T002R300x300M000003B9bHD26W2cD_3.jpg?max_age=2592000"
+            />
+        </a>
+    </div>
+    <div class="recent-post-info">
+        <a class="article-title" href="https://taylor.lnk.to/fearlesstaylorsversionWE" title="Taylor's Version">
+            Fearless (Taylor's Version)
+        </a>
+        <div class="article-meta-wrap">
+            <span class="post-meta-date">
+                <i class="fa fa-book">
+                </i>
+                <span class="article-meta-label">
+                    发行于
+                </span>
+                <time>
+                    2021-04-09
+                </time>
+            </span>
+            <span class="article-meta">
+                <span class="article-meta__separator">
+                    |
+                </span>
+                <i class="fa fa-tag">
+                </i>
+                <a class="article-meta__categories" >
+                    类型：乡村
+                </a>
+            </span>
+        </div>
+        <div class="content">
+            2019年，泰勒·斯威夫特（Taylor Swift）宣布计划重新录制她的整个目录，这是由出售她的原始品牌Big Machine Label Group以及她所有母带引发的雄心勃勃的举动。斯威夫特首次进入这个重新构想的经典是对她具有里程碑意义的2008年大二学生LP Fearless的新演绎，除了许多其他荣誉之外，它还在2010年格莱美奖上捧回了令人垂涎的年度专辑奖杯。斯威夫特首先调侃了《无畏》的"泰勒版本"，发行了她最热门的歌曲之一的新唱片，这是对年轻浪漫"爱情故事"的颂歌。这个版本仍然非常忠实于原来的曲目，尽管很难不注意到斯威夫特的声音在13年之后是如何加强和成熟的。
+        </div>
+    </div>
+</div>
+
+<div class="recent-post-item">
+    <div class="post_cover right_radius">
+        <a href="https://taylor.lnk.to/redtaylorsversionWE" title="">
+            <img class="post_bg entered loaded" src="https://y.qq.com/music/photo_new/T002R300x300M000003wJTpD3zrkS2_2.jpg?max_age=2592000"
+            />
+        </a>
+    </div>
+    <div class="recent-post-info">
+        <a class="article-title" href="https://taylor.lnk.to/redtaylorsversionWE" title="Taylor's Version">
+            Red (Taylor's Version)
+        </a>
+        <div class="article-meta-wrap">
+            <span class="post-meta-date">
+                <i class="fa fa-book">
+                </i>
+                <span class="article-meta-label">
+                    发行于
+                </span>
+                <time>
+                    2021-11-12
+                </time>
+            </span>
+            <span class="article-meta">
+                <span class="article-meta__separator">
+                    |
+                </span>
+                <i class="fa fa-tag">
+                </i>
+                <a class="article-meta__categories" href="#">
+                    类型：乡村/流行
+                </a>
+            </span>
+        </div>
+        <div class="content">
+            时隔九年，这张《Red》继《Fearless》之后，被 Taylor 选为重新录制系列的第二张专辑。或许每个人都可能在二十多岁经历一段充满矛盾的情感生活，对于 Taylor Swift 来说，那是一种红色般炙热、鲜活的青春记忆。她曾把复杂的情感体验浇灌在第四张创作专辑《Red》中——有迷茫也有冲动，有孤独但也自由，折磨、找回自我和甜蜜并存。这是一张令人伤感，但同时也充溢着不羁情绪的专辑，从舞台摇滚、英伦摇滚、流行舞曲到 Dubstep，异彩纷呈的风格中傲然绽放着生命力，让 Taylor 一举突破乡村乐的框架，走进更开阔的音乐天地。
+        </div>
+    </div>
+</div>
+
+<div class="recent-post-item">
+    <div class="post_cover left_radius">
+        <a href="#" title="">
+            <img class="post_bg entered loaded" src="https://s1.ax1x.com/2022/05/05/OZrkb6.jpg"
+            />
+        </a>
+    </div>
+    <div class="recent-post-info">
+        <a class="article-title" href="#" title="Taylor's Version">
+            Taylor's Version
+        </a>
+        <div class="article-meta-wrap">
+            <span class="post-meta-date">
+                <i class="fa fa-book">
+                </i>
+                <span class="article-meta-label">
+                    发表于
+                </span>
+                <time>
+                    2077-00-00
+                </time>
+            </span>
+            <span class="article-meta">
+                <span class="article-meta__separator">
+                    |
+                </span>
+                <i class="fa fa-tag">
+                </i>
+                <a class="article-meta__categories" href="#">
+                    学习笔记
+                </a>
+            </span>
+        </div>
+        <div class="content">
+            测试文本
+        </div>
+    </div>
+</div>
+
+<div class="recent-post-item">
+    <div class="post_cover right_radius">
+        <a href="#" title="">
+            <img class="post_bg entered loaded" src="https://s1.ax1x.com/2022/05/05/OZrkb6.jpg"
+            />
+        </a>
+    </div>
+    <div class="recent-post-info">
+        <a class="article-title" href="#" title="Taylor's Version">
+            Taylor's Version
+        </a>
+        <div class="article-meta-wrap">
+            <span class="post-meta-date">
+                <i class="fa fa-book">
+                </i>
+                <span class="article-meta-label">
+                    发表于
+                </span>
+                <time>
+                    2077-00-00
+                </time>
+            </span>
+            <span class="article-meta">
+                <span class="article-meta__separator">
+                    |
+                </span>
+                <i class="fa fa-tag">
+                </i>
+                <a class="article-meta__categories" href="#">
+                    学习笔记
+                </a>
+            </span>
+        </div>
+        <div class="content">
+            测试文本
+        </div>
+    </div>
+</div>
+
+<div class="recent-post-item">
+    <div class="post_cover left_radius">
+        <a href="#" title="">
+            <img class="post_bg entered loaded" src="https://s1.ax1x.com/2022/05/05/OZrkb6.jpg"
+            />
+        </a>
+    </div>
+    <div class="recent-post-info">
+        <a class="article-title" href="#" title="Taylor's Version">
+            Taylor's Version
+        </a>
+        <div class="article-meta-wrap">
+            <span class="post-meta-date">
+                <i class="fa fa-book">
+                </i>
+                <span class="article-meta-label">
+                    发表于
+                </span>
+                <time>
+                    2077-00-00
+                </time>
+            </span>
+            <span class="article-meta">
+                <span class="article-meta__separator">
+                    |
+                </span>
+                <i class="fa fa-tag">
+                </i>
+                <a class="article-meta__categories" href="#">
+                    学习笔记
+                </a>
+            </span>
+        </div>
+        <div class="content">
+            测试文本
+        </div>
+    </div>
+</div>
+
+<div class="recent-post-item">
+    <div class="post_cover right_radius">
+        <a href="#" title="">
+            <img class="post_bg entered loaded" src="https://s1.ax1x.com/2022/05/05/OZrkb6.jpg"
+            />
+        </a>
+    </div>
+    <div class="recent-post-info">
+        <a class="article-title" href="#" title="Taylor's Version">
+            Taylor's Version
+        </a>
+        <div class="article-meta-wrap">
+            <span class="post-meta-date">
+                <i class="fa fa-book">
+                </i>
+                <span class="article-meta-label">
+                    发表于
+                </span>
+                <time>
+                    2077-00-00
+                </time>
+            </span>
+            <span class="article-meta">
+                <span class="article-meta__separator">
+                    |
+                </span>
+                <i class="fa fa-tag">
+                </i>
+                <a class="article-meta__categories" href="#">
+                    学习笔记
+                </a>
+            </span>
+        </div>
+        <div class="content">
+            测试文本
+        </div>
+    </div>
+</div>
+<div class="container" style="margin-top: 15px;">
+                <div class="row">
+                    <div class="col-md-15">
+						<h1 class="heading">最新专辑 🎶</h1>
+<div class="recent-post-item">
+    <div class="post_cover left_radius">
+        <a href="https://taylor.lnk.to/taylorswiftmidnights" title="">
+            <img class="post_bg entered loaded" src="https://s1.ax1x.com/2022/09/01/v5L4PA.jpg"
+            />
+        </a>
+    </div>
+    <div class="recent-post-info">
+        <a class="article-title" href="https://taylor.lnk.to/taylorswiftmidnights" title="taylor.lnk.to">
+            Midnights (3am Edition)
+        </a>
+        <div class="article-meta-wrap">
+            <span class="post-meta-date">
+                <i class="fa fa-book">
+                </i>
+                <span class="article-meta-label">
+                    发行于
+                </span>
+                <time>
+                    2022-10-21
+                </time>
+            </span>
+            <span class="article-meta">
+                <span class="article-meta__separator">
+                    |
+                </span>
+                <i class="fa fa-tag">
+                </i>
+                <a class="article-meta__categories" href="#">
+                    类型：国际流行
+                </a>
+            </span>
+        </div>
+        <div class="content">
+            霉霉在VMA颁奖典礼官宣了自己的新专辑“Midnights”于10月21号发行！我们游离于爱与恐惧、骚动与泪水之间的时分；我们对着墙壁豪饮直至得到回应的时分；我们将自己囚禁于自制的牢笼，祈求此刻不将犯下翻天覆地错误的时分。这张专辑收录着Taylor在午夜时分写下的歌，是历经惊惧与美梦交织的旅途上的成果。是走过的路，是直面过的恶魔。为所有在辗转反侧后决定将灯盏点起，进而探寻未来的人们而作——希望在指针转向十二时...我们能得而与自我相会。《午夜时分》，13支不眠夜的故事，散落遍布我一生的故事，已在10月21日揭晓。
+        </div>
+    </div>
+</div>
+
+<!--底部信息  开始-->
+
+    <div class="footer">
+        <p>
+			<span><span>
+			<span>　　　　　　　　</span>
+<!--底部信息  结束-->
+<!--底部信息  开始-->
+
+    <div class="footer">
+        <p>
+			<span><span>
+			<span>📣📣📣请用最新版本的浏览器内核访问该网页，例如最新的Edge或Chrome浏览器。否则网页会出现图标缺失、无背景图片、框架拉长等问题。如果仍然无法正常显示，请多次刷新网页直到网页正常显示。🚀🚀🚀</span>
+<!--底部信息  结束-->
+						
+
+			
+		</div>
+		
+	</body>
+</html>
